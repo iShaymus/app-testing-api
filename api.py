@@ -160,7 +160,10 @@ def getEmployees():
         if employee['employeeNumber'] == id:
             results.append(employee)
 
-    return jsonify(results)
+    if len(results) < 1:
+        return "No match for found for the specified employee number"
+    else:
+        return jsonify(results)
 
 @app.route('/api/uscorr/sap/balances/<employeeNo>', methods=['GET'])
 def getLeaveBalances(employeeNo):
