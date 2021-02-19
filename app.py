@@ -30,8 +30,8 @@ def getEmployees():
     else:
         return jsonify(results)
 
-@app.route('/api/uscorr/sap/balances/<employeeNo>', methods=['GET'])
-def getLeaveBalances(employeeNo):
+@app.route('/api/uscorr/sap/balances', methods=['GET'])
+def getLeaveBalances():
 
     # id should be a valid employee number
     if 'id' in request.args:
@@ -50,8 +50,8 @@ def getLeaveBalances(employeeNo):
     else:
         return jsonify(results)
 
-@app.route('/api/uscorr/sap/pay/<employeeNo>', methods=['GET'])
-def getPays(employeeNumber):
+@app.route('/api/uscorr/sap/pay', methods=['GET'])
+def getPays():
     # id should be a valid employee number
     if 'id' in request.args:
         id = int(request.args['id'])
@@ -69,8 +69,8 @@ def getPays(employeeNumber):
     else:
         return jsonify(results)
 
-@app.route('/api/uscorr/sap/leave/<employeeNo>', methods=['GET'])
-def getLeave(employeeNo):
+@app.route('/api/uscorr/sap/leave', methods=['GET'])
+def getLeave():
     # id should be a valid employee number
     if 'id' in request.args:
         id = int(request.args['id'])
@@ -88,8 +88,8 @@ def getLeave(employeeNo):
     else:
         return jsonify(results)
 
-@app.route('/api/uscorr/roster/<employeeNo>', methods=['GET'])
-def getRoster(employeeNo):
+@app.route('/api/uscorr/roster', methods=['GET'])
+def getRoster():
     # id should be a valid employee number
     if 'id' in request.args:
         id = int(request.args['id'])
